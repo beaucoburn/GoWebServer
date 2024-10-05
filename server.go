@@ -17,6 +17,10 @@ func main() {
     fmt.Fprintf(w, "Hi")
   })
 
+  http.HandleFunc("/beau", func(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "<html><body><h1>Beau</h1></body></html>")
+  })
+
   log.Fatal(http.ListenAndServe(":8081", nil))
 
 }
